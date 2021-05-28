@@ -15,7 +15,7 @@ const BookCard = ({book, view}) => {
     return (
         <div className="col">
             <div
-                className="card content my-4 p-4 text-center"
+                className="card my-4 p-4 text-center"
                 style={{ width: "28rem", height: "36rem" }}
             >
                 {book.volumeInfo.imageLinks &&

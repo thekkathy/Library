@@ -53,7 +53,7 @@ const SearchBooks = () => {
     return (
         <div className="">
             <main>
-                <div className="contianer p-4 m-4">
+                <div className="p-4 m-4">
                     <div className="row display-4 m-4 justify-content-center">
                         <span className="text-success" style={{ fontSize: "2em" }}>
                             <i class="fas fa-book"></i>
