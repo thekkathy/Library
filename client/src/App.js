@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import BookCard from './components/BookCard';
 
 function App() {
   const [title, setTitle] = useState("");
@@ -67,7 +68,8 @@ function App() {
               <div className="h3 font-weight-normal">
                 {books.map(book => {
                   return <div>
-                    <div>{book.volumeInfo.title}</div>
+                    <button className="btn">{book.volumeInfo.title}</button>
+                    <BookCard />
                   </div>
                 })}
               </div>
