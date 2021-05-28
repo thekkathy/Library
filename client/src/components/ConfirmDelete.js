@@ -1,9 +1,10 @@
 import React from 'react'
 
-const ConfirmDelete = () => {
+const ConfirmDelete = ({match:{params:{bookID}}}) => {
     return (
         <div>
             ConfirmDelete
+            {bookID}
         </div>
     )
 }

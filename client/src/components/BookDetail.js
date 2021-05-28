@@ -1,10 +1,10 @@
 import React from 'react'
 
-const BookDetail = ({book, view}) => {
+const BookDetail = ({match:{params:{bookID, view}}}) => {
     return (
         <div>
             BookDetail
-            {book}
+            {bookID}
             {view}
         </div>
     )

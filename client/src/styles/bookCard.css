@@ -1,0 +1,8 @@
+.content {
+    overflow-y: scroll;
+}
+
+.img-thumbnail{
+    width: 2rem;
+    height: 3rem;
+}

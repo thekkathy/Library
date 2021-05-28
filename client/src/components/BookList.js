@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { BookResultsListContext } from '../context/bookResultsListContext';
+import BookCard from './BookCard';
 
-const BookList = ({bookList, topDescription, searchButtonText}) => {
+const BookList = ({ topDescription, searchButtonText }) => {
+    const { bookResultsList } = useContext(BookResultsListContext);
+
     return (
         <div>
-            BooksList
-            {bookList}
             {topDescription}
-            {searchButtonText}
+            <div className="card m-4 p-4">
+                <div className="row row-cols-1 row-cols-xs-2">
+                    {bookResultsList.map(book => {
+                        return <BookCard book={book} view="add" />
+                    })}
+                </div>
+            </div>
         </div>
     )
 }
