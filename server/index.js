@@ -34,20 +34,31 @@ app.get("/books/get", async (req, res) => {
     const snapshot = await db.collection("books").get();
     const books = [];
     snapshot.forEach((doc) => {
-        books.push({...doc.data(), id: doc.id});
+        books.push({ ...doc.data() });
     })
     res.send(books);
 });
 
-app.post("/books/add", async(req, res) => {
-    const {title, author} = req.body;
+app.post("/books/add", async (req, res) => {
+    const { book } = req.body;
 
-    const resp = await db.collection("books").add({
-        title: title,
-        author: author
+    const resp = await db.collection("books").doc(book.id).set({
+        book: book
     });
 
     console.log("Added document with ID: ", resp.id);
+    res.sendStatus(200);
+})
+
+app.delete("/books/delete", async (req, res) => {
+    const { book } = req.body;
+
+    const resp = await db.collection("books").doc(book.id).delete().then(() => {
+        console.log("Document successfully deleted!");
+    }).catch((error) => {
+        console.error("Error removing document: ", error);
+    });
+
     res.sendStatus(200);
 })
 
