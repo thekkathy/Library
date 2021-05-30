@@ -1,19 +1,14 @@
-import React, { useContext, useEffect } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 import SearchBooks from './SearchBooks';
-import BookList from './BookList';
 import BookDetail from './BookDetail';
 import Load from './Load';
 import ConfirmDelete from "./ConfirmDelete";
 import MyShelf from './MyShelf';
-
-import { BookResultsListContext } from '../context/bookResultsListContext';
-import { MyShelfContext } from '../context/myShelfContext';
+import SearchResults from './SearchResults';
 
 const Routing = () => {
-    const { bookResultsList } = useContext(BookResultsListContext);
-    const { myShelf, setMyShelf } = useContext(MyShelfContext);
 
     return (
         <div>
@@ -37,18 +32,11 @@ const Routing = () => {
                         </ul>
                     </div>
                 </nav>
+                {/* ROUTING */}
                 <Switch>
                     <Route path="/" exact component={SearchBooks} />
-                    <Route
-                        path="/my-books/"
-                        exact component={MyShelf}
-                    />
-                    <Route
-                        path="/search-results/"
-                        exact render={(props) => (
-                            <BookList {...props} bookList={bookResultsList} topDescription={"Here are some books you can add"} view="add" />
-                        )}
-                    />
+                    <Route path="/my-books/" exact component={MyShelf}/>
+                    <Route path="/search-results/" exact component={SearchResults} />
                     <Route path="/loading" exact component={Load} />
                     <Route path="/book/:bookID/:view" exact component={BookDetail} />
                     <Route path="/confirm-delete/:bookID" exact component={ConfirmDelete} />

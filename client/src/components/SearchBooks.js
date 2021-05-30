@@ -60,8 +60,8 @@ const SearchBooks = () => {
                         </span>
                     </div>
                     <div className="row display-4 m-4 justify-content-center">Bookshelf</div>
-                    <div className="row mt-4 justify-content-center">A website that lets you find and save books.</div>
-                    <div className="row mb-4 justify-content-center">Find books to add to your shelf here.</div>
+                    <div className="row mt-4 justify-content-center">Welcome to Bookshelf! We are a website that lets you find and save books.</div>
+                    <div className="row mb-4 justify-content-center">Type in a title below to start building your collection.</div>
                     <div className="row m-4 justify-content-center">
                         <div className="card w-100 px-5 py-3">
                             <div className="row">

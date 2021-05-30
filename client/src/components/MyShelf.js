@@ -1,9 +1,19 @@
-import React, { useContext, useEffect } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
 import BookList from './BookList';
 import { MyShelfContext } from '../context/myShelfContext';
 
 const MyShelf = () => {
     const { myShelf, setMyShelf } = useContext(MyShelfContext);
+    const description = (
+        <Fragment>
+            <div className="text-center">
+                <h3 className="font-weight-light">
+                    My books
+                </h3>
+                <p>This is your magnifacent shelf. Click on "View Book" to view it or delete it.</p>
+            </div>
+        </Fragment>
+    )
 
     useEffect(async () => {
         try {
@@ -26,10 +36,9 @@ const MyShelf = () => {
 
     return (
         <div>
-            <BookList bookList={myShelf} topDescription={"My books"} view="delete" />
+            <BookList bookList={myShelf} topDescription={description} view="delete" />
         </div>
     )
 }
-// <BookList bookList={myShelf} topDescription={"My books"} view="delete" />
 
 export default MyShelf

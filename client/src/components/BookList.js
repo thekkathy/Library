@@ -10,9 +10,7 @@ const BookList = ({ bookList, topDescription, view }) => {
     return (
         <div className="my-4">
             <div className="row justify-content-center">
-                <div className="h3 font-weight-light">
                     {topDescription}
-                </div>
             </div>
             <div className="card content m-4 p-4">
                 <div className="row row-cols-1 row-cols-xs-2">
