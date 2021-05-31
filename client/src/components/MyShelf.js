@@ -10,7 +10,10 @@ const MyShelf = () => {
                 <h3 className="font-weight-light">
                     My books
                 </h3>
-                <p>This is your magnifacent shelf. Click on "View Book" to view it or delete it.</p>
+                <p>
+                    <div>This is your magnifacent collection of books.</div>
+                    <div>Click on "View Book" to admire a book or delete it if you don't want it in your colelction anymore.</div>
+                </p>
             </div>
         </Fragment>
     )

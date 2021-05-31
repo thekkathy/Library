@@ -9,7 +9,7 @@ const BookList = ({ bookList, topDescription, view }) => {
 
     return (
         <div className="my-4">
-            <div className="row justify-content-center">
+            <div className="row justify-content-center mx-4">
                     {topDescription}
             </div>
             <div className="card content m-4 p-4">
