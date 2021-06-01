@@ -35,7 +35,7 @@ const MyShelf = () => {
         } catch (error) {
             console.log(error);
         }
-    }, [myShelf]);
+    }, []);
 
     return (
         <div>
